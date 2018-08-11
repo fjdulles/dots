@@ -1,0 +1,53 @@
+#!/bin/BASH_ENV
+
+# environment variables (uncomment and change as desired)
+#
+
+
+PATH=$PATH:$HOME/bin
+BASH_ENV=$HOME/.bashrc
+USERNAME=""
+export USERNAME BASH_ENV PATH
+#echo "This is .bash_env"
+
+PRINTER=csp1; export PRINTER
+VISUAL=vi; export VISUAL
+EDITOR=vi; export EDITOR
+PAGER=less; export PAGER
+MANPAGER=most
+
+export CLICOLOR=YES
+
+
+export FCEDIT=vi
+export HISTCONTROL=ignoreboth:erasedups
+export HISTFILESIZE=5000
+export HISTSIZE=5000
+export MAILCHECK=60
+#export MAILPATH=/var/spool/mail/dulles
+#export LESS=Ncez-2y20
+export TMOUT=0
+
+export command_oriented_history=1
+export auto_resume=substring
+export cdable_vars=1
+
+export VISUAL=vi
+export EDITOR=vi
+export PAGER=less
+#export PROMPT_COMMAND="history -a"
+export TMPDIR=/tmp
+CDPATH=".:..:../..:$HOME"
+
+#
+#shopt -s globstar
+# Append to the Bash history file, rather than overwriting it
+shopt -s histappend
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob;
+
+
+#bind -m vi
+

@@ -1,0 +1,18 @@
+#! /bin/bash
+# .bash_login
+
+##
+## default ~/.bashlogin
+## version 1.00
+##
+
+# Put any commands you want to executed at login here.
+
+echo "This is .bash_login"
+uptime
+users
+
+#
+# run the UNIX calendar program
+#
+if [ -r ~/calendar ]; then calendar; fi

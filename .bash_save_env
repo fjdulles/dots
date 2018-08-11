@@ -1,0 +1,97 @@
+##
+## default ~/.bashenv
+## version 1.00
+##
+
+
+# Put your environment variable settings here.
+
+#
+#############################################################################
+#
+# Generic user .profile file
+# Version 1.0, Thu Sep  2 19:53:18 CDT 1993
+#
+#############################################################################
+#
+# Executed only by login shells under bash
+#
+#
+# source common .profile file
+#
+if [ -f /usr/local/startup/.profile.common ] 
+then
+   . /usr/local/startup/.profile.common
+fi
+
+#
+# get paths straight for all machines
+#
+#  Sun setup
+if [ -x /vmunix ]
+then
+   PATH=$HOME/bin/X11:$HOME/bin:/usr/local/bin/X11:/usr/local/bin:/usr/ucb:/bin:/usr/bin:/usr/local/bin/X11:/usr/etc:.
+fi
+#  Iris setup
+if [ -x /unix ]
+then
+   PATH=$HOME/bin/X11:$HOME/bin:/usr/local/bin/X11:/usr/local/bin:/usr/bsd:/bin:/usr/bin:/usr/sbin:/usr/bin/X11:.
+fi
+#  Apollo setup
+if [ -x /sysboot ]
+then
+   PATH=$HOME/com:$HOME/bin:/usr/local/bin:/usr/ucb:/bin:/com:/usr/bin:.
+   PATH=$PATH:/usr/apollo/bin:/usr/bin/X11
+fi
+export PATH
+#PATH="$HOME/bin:/usr/local/bin:/usr/ucb:/bin:/usr/bin:/usr/bin/X11"
+#PATH=$PATH:/usr/sbin:/usr/local/chem/bin:/usr/local/util
+#export PATH=$PATH:/usr/local/bin/X11:.
+
+#
+# environment variables (uncomment and change as desired)
+#
+export PRINTER=csp1
+export VISUAL=vi
+export EDITOR=vi
+export PAGER=less
+export TEXINPUTS="~/lib/texinputs:/usr/local/lib/tex/include/xypic:/usr/local/lib/tex/include/texdraw"
+#export TMPDIR=/tmp
+
+#
+# other basic stuff 
+#
+umask 066
+
+#
+# schedule
+#
+if [ -f /usr/local/startup/motd ]
+then
+   cat /usr/local/startup/motd
+   #~/bin/lcookie
+fi
+#
+# Begin FJD specific stuff
+#
+export CDPATH=.:$HOME:/u:..
+#
+# Set ENV for execution by non-interactive shells
+#
+#export ENV=$HOME/.envfile
+export FCEDIT=vi
+export HISTSIZE=500
+export MAILCHECK=180
+export NNTPSERVER=news.visi.com
+export PAGER='less -sr'
+#export LESS=Ncez-2y20
+export TMOUT=0
+
+export command_oriented_history=1
+export auto_resume=substring
+export cdable_vars=1
+#
+# Set up the prompt.
+#
+source $HOME/.bash_prompt
+
