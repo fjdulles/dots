@@ -25,7 +25,7 @@ source ~/.bash_functions
 
 source ~/.bash_prompt
 
-eval $(gdircolors ~/.dircolors/dircolors.256dark)
+if which gdircolors &> /dev/null && eval $(gdircolors ~/.dircolors/dircolors.256dark)
 
 # Enable some Bash 4 features when possible:
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
