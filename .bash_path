@@ -12,8 +12,8 @@ export PATH=\
 /usr/local/sbin:\
 /usr/local/bin/X11:\
 /Developer/usr/bin:\
-/Developer/usr/sbin:\
-/usr/local/mysql/bin:\
+/Developer/usr/sbin
+#/usr/local/mysql/bin:\
 
 export MANPATH=/usr/local/man:\
 /usr/man/preformat:\
@@ -23,5 +23,5 @@ export MANPATH=/usr/local/man:\
 /usr/share/catman/:\
 /usr/X11R6/man:
 
-export INFOPATH=\
-/opt/local/share/info
+#export INFOPATH=\
+#/opt/local/share/info

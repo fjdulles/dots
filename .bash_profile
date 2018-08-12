@@ -6,7 +6,7 @@
 
 # If not running interactively, don't do anything
 
-[ -z "$PS1" ] && return
+
 
 
 #
@@ -19,36 +19,13 @@ umask 066
 source ~/.bash_path
 source ~/.bash_aliases
 source ~/.bash_env
+source ~/.bash_functions
+
+[ -f "~/macosdefaults.sh" ] && source macosdefaults.sh  #Don't run if on Linux
 
 source ~/.bash_prompt
 
 eval $(gdircolors ~/.dircolors/dircolors.256dark)
-
-#
-# SSH stuff
-#
-SSH_ENV="$HOME/.ssh/environment"
-
-function start_agent {
-    echo "Initialising new SSH agent..."
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-    echo succeeded
-    chmod 600 "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add;
-}
-
-# Source SSH settings, if applicable
-
-if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
-    #ps ${SSH_AGENT_PID} doesn't work under cywgin
-    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-        start_agent;
-    }
-else
-    start_agent;
-fi
 
 # Enable some Bash 4 features when possible:
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
@@ -58,8 +35,8 @@ for option in autocd globstar; do
 done;
 
 # Add tab completion for many Bash commands
-if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-	source "$(brew --prefix)/share/bash-completion/bash_completion";
+if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/completions" ]; then
+	source "$(brew --prefix)/share/bash-completion/completions";
 elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion;
 fi;
@@ -86,7 +63,7 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 #
 # Set up the prompt.
 #
-source ~/.bash_prompt
+# source ~/.bash_prompt
 # source $HOME/.bashrc
 # 
 # export RAN_BASH_PROFILE=yes
