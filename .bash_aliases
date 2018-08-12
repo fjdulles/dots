@@ -67,6 +67,7 @@ alias false="let 0"
 alias flushdns="dscacheutil -flushcache"
 alias functions='typeset -f'
 alias g="git"
+alias gs="git status "
 alias grc="egrep '^#' "
 alias grep='grep --color=auto '
 alias gz=gzip

@@ -48,9 +48,11 @@ bakcyn='\e[46m'   # Cyan
 bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
 
+HOST=$(uname -n)  #Helps figure which host we are on
+
 #export PS1="\e[31m(FJD-\h/\d-\T \w) \e[0m"
 #export PS1="${bldcyn}(\u ${bldcyn}\h ${txtgrn}\d-${bldgrn}\T ${txtred}\w${bldcyn})$txtrst "
-export PS1="${txtgrn}|${txtred}\w ${txtcyn}\u ${txtwht}\D{%a%e-%b} ${txtblu}\D{%T%p}\n${txtgrn}| ${txtrst}"
+export PS1="${txtgrn}|$HOST ${txtred}\w ${txtcyn}\u ${txtwht}\D{%a%e-%b} ${txtblu}\D{%T%p}\n${txtgrn}| ${txtrst}"
 
 # ## Prompt
 #
