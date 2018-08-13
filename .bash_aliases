@@ -1,10 +1,8 @@
 #! /bin/bash
+#
 # .bash_aliases
-# echo "This is .bash_aliases"
+#  echo "This is .bash_aliases"
 #
-#
-# Aliases NOT specific to one or the other host
-#!/usr/local/bin/bash -x
 
 # apt commands only useful on debian related linux
 #
@@ -25,17 +23,16 @@ alias .4='cd ../../../../'
 alias .3='cd ../../../'
 alias ...='cd ../../'
 alias ..='cd ../'
-#alias atp="ssh dulles@atp.cbs.umn.edu"
+
 alias aptinstall='sudo apt-get install '
 alias autoload='typeset -fu'
-#alias biosci="ssh fjd@biosci.cbs.umn.edu"
-#alias bun="bunzip2 "
+
 alias cdb='cd ~/bin'
 alias cdp='cd ~-'
 alias cdub='cd /usr/local/bin'
 
 alias chown='chown --preserve-root'
-#alias chmod='chmod --preserve-root'
+alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
 alias cl=clear

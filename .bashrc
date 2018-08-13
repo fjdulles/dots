@@ -31,11 +31,12 @@ source ~/.bash_hh
 
 export FCEDIT=vi
 export HISTCONTROL=ignoreboth:erasedups
-export HISTFILESIZE=5000
-export HISTSIZE=5000
-export MAILCHECK=60
+#export HISTFILESIZE=10000
+#export HISTSIZE=15000
+#export MAILCHECK=60
 #export MAILPATH=/var/spool/mail/dulles
-#export LESS=Ncez-2y20
+
+export LESS=Ncez-2y20
 export TMOUT=0
 
 export command_oriented_history=1
@@ -57,6 +58,18 @@ shopt -s histappend
 shopt -s cdspell
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
+
+#
+# Commands for hh (from hh --show-configuration)
+#
+export HH_CONFIG=hicolor         # get more colors
+#shopt -s histappend              # append new history items to .bash_history
+#export HISTCONTROL=ignorespace   # leading space hides commands from history
+#export HISTFILESIZE=10000        # increase history file size (default is 500)
+export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
+export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file sync
+# if this is interactive shell, then bind hh to Ctrl-r (for Vi mode check doc)
+if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
 
 #bind -m vi
 

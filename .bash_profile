@@ -6,15 +6,13 @@
 
 # If not running interactively, don't do anything
 
-
+[ -z "$PS1" ] && return
 
 
 #
 # other basic stuff 
 #
 umask 066
-
-
 
 source ~/.bash_path
 source ~/.bash_aliases
@@ -25,7 +23,7 @@ source ~/.bash_functions
 
 source ~/.bash_prompt
 
-if which gdircolors &> /dev/null && eval $(gdircolors ~/.dircolors/dircolors.256dark)
+#if which gdircolors &> /dev/null && eval $(gdircolors ~/.dircolors/dircolors.256dark) #broken
 
 # Enable some Bash 4 features when possible:
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
@@ -42,6 +40,7 @@ elif [ -f /etc/bash_completion ]; then
 fi;
 
 # Enable tab completion for `g` by marking it as an alias for `git`
+#
 if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
 	complete -o default -o nospace -F _git g;
 fi;
