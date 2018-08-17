@@ -14,6 +14,7 @@
 #
 umask 066
 
+source ~/.bashrc 
 source ~/.bash_path
 source ~/.bash_aliases
 source ~/.bash_env
