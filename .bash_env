@@ -1,4 +1,7 @@
-#!/bin/BASH_ENV
+#!/usr/bin/env bash
+#!/bin/bash
+#
+#.bash_env
 
 # environment variables (uncomment and change as desired)
 #
@@ -72,7 +75,7 @@ export VISUAL=vi
 export EDITOR=vi
 export PAGER=less
 #export PROMPT_COMMAND="history -a"
-export TMPDIR=/tmp
+#export TMPDIR=/tmp
 CDPATH=".:..:../..:$HOME"
 
 #

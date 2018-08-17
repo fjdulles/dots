@@ -47,7 +47,7 @@ export VISUAL=vi
 export EDITOR=vi
 export PAGER=less
 #export PROMPT_COMMAND="history -a"
-export TMPDIR=/tmp
+#export TMPDIR=/tmp
 CDPATH=".:..:../..:$HOME"
 
 #

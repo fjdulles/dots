@@ -92,6 +92,7 @@ alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume output volume 100'"
 
 alias reload="exec ${SHELL} -l"
+alias rel="exec ${SHELL} -l"
 
  
 # find out if remote server supports gzip / mod_deflate or not #
@@ -126,7 +127,7 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
-alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+#alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
  
 
@@ -141,7 +142,7 @@ else # macOS `ls`
 	export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 fi
 
-
+alias c="/bin/cat "
 alias l.="/bin/ls -ald .[0-9A-z]* "
 alias l="/bin/ls -CF --color"
 alias lc="/bin/ls -CF --color"
