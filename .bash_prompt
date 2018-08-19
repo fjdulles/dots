@@ -51,8 +51,10 @@ txtrst='\e[0m'    # Text Reset
 HOST=$(uname -n)  #Helps figure which host we are on
 [ -f ~/.bash_host ] &&  source ~/.bash_host
 
+unset PS1
 #export PS1="\e[31m(FJD-\h/\d-\T \w) \e[0m"
 #export PS1="${bldcyn}(\u ${bldcyn}\h ${txtgrn}\d-${bldgrn}\T ${txtred}\w${bldcyn})$txtrst "
+#export PS1="${txtred}|${txtgrn}$HOST ${txtcyn}\u ${txtred}\w ${txtwht}\D{%a%e-%b}${txtblu}\D{%T}${txtylw}|\n| ${txtrst}"
 export PS1="${txtred}|${txtgrn}$HOST ${txtcyn}\u ${txtred}\w ${txtwht}\D{%a%e-%b}${txtblu}\D{%T}${txtred}|\n| ${txtrst}"
 
 # ## Prompt

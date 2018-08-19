@@ -19,6 +19,9 @@ source ~/.bash_path
 source ~/.bash_aliases
 source ~/.bash_env
 source ~/.bash_functions
+source ~/.bash_hh
+source ~/.bash_prompt
+echo "Sourced .bash files"
 
 [ -f "~/macosdefaults.sh" ] && source macosdefaults.sh  #Don't run if on Linux
 

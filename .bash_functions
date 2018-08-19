@@ -44,3 +44,50 @@ function mk() {
 function manpdf() {
  man -t "${1}" | open -f -a /Applications/Preview.app/
 }
+
+cd ()
+{
+  case $# in
+    0) builtin cd "$HOME" ;;
+    1) builtin cd "$@" ;;
+    2) old="$1"
+       new="$2"
+       dir=$(echo "$PWD" | sed "s:$old:$new:g")
+
+       case "$dir" in
+         "$PWD") echo "bash: cd: bad substitution" >&2 ; return 1 ;;
+         *)      echo "$dir"
+                 builtin cd "$dir"
+           ;;
+       esac
+      ;;
+    *) echo "cd: wrong arg count" >&2 ; return 1 ;;
+  esac
+}
+
+
+# "repeat" command.  Like:
+#
+#	repeat 10 echo foo
+repeat ()
+{
+    local count="$1" i;
+    shift;
+    for i in $(seq 1 "$count");
+    do
+        eval "$@";
+    done
+}
+
+# Subfunction needed by `repeat'.
+seq ()
+{
+    local lower upper output;
+    lower=$1 upper=$2;
+    while [ $lower -le $upper ];
+    do
+        output="$output $lower";
+        lower=$[ $lower + 1 ];
+    done;
+    echo $output
+}

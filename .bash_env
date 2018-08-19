@@ -44,27 +44,27 @@ export MANPAGER='less -X';
  export GPG_TTY=$(tty);
 
 PATH=$PATH:$HOME/bin
-BASH_ENV=$HOME/.bashrc
-USERNAME=""
+BASH_ENV=$HOME/.bash_env
+USERNAME="fjd"
 export USERNAME BASH_ENV PATH
 #echo "This is .bash_env"
 
-PRINTER=csp1; export PRINTER
+#PRINTER=csp1; export PRINTER
 VISUAL=vi; export VISUAL
 EDITOR=vi; export EDITOR
 PAGER=less; export PAGER
-MANPAGER=most
+MANPAGER=less
 
 export CLICOLOR=YES
 
 
 export FCEDIT=vi
 export HISTCONTROL=ignoreboth:erasedups
-export HISTFILESIZE=5000
-export HISTSIZE=5000
-export MAILCHECK=60
+#export HISTFILESIZE=5000
+#export HISTSIZE=5000
+#qexport MAILCHECK=60
 #export MAILPATH=/var/spool/mail/dulles
-#export LESS=Ncez-2y20
+export LESS=Ncez-2y20
 export TMOUT=0
 
 export command_oriented_history=1
