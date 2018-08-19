@@ -53,7 +53,7 @@ HOST=$(uname -n)  #Helps figure which host we are on
 
 #export PS1="\e[31m(FJD-\h/\d-\T \w) \e[0m"
 #export PS1="${bldcyn}(\u ${bldcyn}\h ${txtgrn}\d-${bldgrn}\T ${txtred}\w${bldcyn})$txtrst "
-export PS1="${txtred}(${txtgrn}$HOST ${txtred}\w ${txtcyn}\u ${txtwht}\D{%a%e-%b} ${txtblu}\D{%T%p}${txtred})\n|| ${txtrst}"
+export PS1="${txtred}|${txtgrn}$HOST ${txtcyn}\u ${txtred}\w ${txtwht}\D{%a%e-%b}${txtblu}\D{%T}${txtred}|\n| ${txtrst}"
 
 # ## Prompt
 #

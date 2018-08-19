@@ -92,6 +92,7 @@ alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume output volume 100'"
 
 alias reload="exec ${SHELL} -l"
+alias rel='reload'
 alias rel="exec ${SHELL} -l"
 
  

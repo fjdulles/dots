@@ -51,8 +51,6 @@ export PAGER=less
 #export TMPDIR=/tmp
 CDPATH=".:..:../..:$HOME"
 
-#
-#shopt -s globstar
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
 # Autocorrect typos in path names when using `cd`
@@ -64,6 +62,7 @@ shopt -s nocaseglob;
 # Commands for hh (from hh --show-configuration)
 #
 export HH_CONFIG=hicolor         # get more colors
+export HH_CONFIG=blacklist
 #shopt -s histappend              # append new history items to .bash_history
 #export HISTCONTROL=ignorespace   # leading space hides commands from history
 #export HISTFILESIZE=10000        # increase history file size (default is 500)
