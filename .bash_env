@@ -43,7 +43,7 @@ export MANPAGER='less -X';
 # # https://stackoverflow.com/a/42265848/96656
  export GPG_TTY=$(tty);
 
-PATH=$PATH:$HOME/bin
+#PATH=$PATH:$HOME/bin
 BASH_ENV=$HOME/.bash_env
 USERNAME="fjd"
 export USERNAME BASH_ENV PATH

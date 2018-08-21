@@ -13,7 +13,6 @@ export PATH=\
 /usr/local/bin/X11:\
 /Developer/usr/bin:\
 /Developer/usr/sbin
-#/usr/local/mysql/bin:\
 
 export MANPATH=/usr/local/man:\
 /usr/man/preformat:\
