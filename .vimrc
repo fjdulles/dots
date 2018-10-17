@@ -1,6 +1,8 @@
 set nocompatible  " be iMproved, required
 filetype off  " required
 set exrc
+set path+=**
+set wildmenu
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -126,5 +128,5 @@ set mouse=c
 set shortmess+=A
 
 " ==== custom commands
-command JsonPretty execute ":%!python -m json.tool"
+"command JsonPretty execute ":%!python -m json.tool"
 set secure
