@@ -7,6 +7,19 @@ set wildmenu
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" From YouTube  'How to Do 90% of What Plugind Do (With Just Vim)'
+let g:netrw_banner=0       " diable annoying banner
+let g:netrw_browse_split=4 " open in prior window
+let g:netrw_altv=1         " open splits tot he right
+let g:netrw_liststyle=3    " tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^|\s\s\)\zs\.\S\+'
+
+" NOW WE CAN:
+" - :edit a folder to open a file browser
+" - <CR>/v/t to open in an h-split/vsplit/tab
+" - check |netrw-browse-maps| for more mappings
+
 " ==== plugin manager
 Plugin 'VundleVim/Vundle.vim'
 
@@ -129,4 +142,5 @@ set shortmess+=A
 
 " ==== custom commands
 "command JsonPretty execute ":%!python -m json.tool"
+command! MakeTags !ctags -R .
 set secure
