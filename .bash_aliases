@@ -191,6 +191,7 @@ alias valias="vi $HOME/.bash_aliases"
 alias vi="vim"
 alias vprof="vi $HOME/.bash_profile"
 alias vrc="vi $HOME/.bashrc"
+alias xee="open -a /Applications/Xee³.app  ."
 #alias vt100='export TERM=vt100'
 #alias work='stty rows 60 columns 102'
 
