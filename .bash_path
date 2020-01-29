@@ -5,14 +5,15 @@ export PATH=\
 ~/bin:\
 /usr/local/bin:\
 /bin:\
-/usr/bin/X11:\
+#/usr/bin/X11:\
 /usr/bin:\
 /usr/sbin:\
 /sbin:\
 /usr/local/sbin:\
-/usr/local/bin/X11:\
-/Developer/usr/bin:\
-/Developer/usr/sbin
+/usr/X11/bin:\
+/usr/local/bin/X11 #:\
+#/Developer/usr/bin:\
+#/Developer/usr/sbin
 
 export MANPATH=/usr/local/man:\
 /usr/man/preformat:\

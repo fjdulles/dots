@@ -24,6 +24,10 @@ alias .3='cd ../../../'
 alias ...='cd ../../'
 alias ..='cd ../'
 
+alias 2='python2'
+alias 3='python3'
+alias python='python3' 
+
 alias aptinstall='sudo apt-get install '
 alias autoload='typeset -fu'
 
@@ -41,13 +45,16 @@ alias cl=clear
 #the following is better as a script that takes a size parameter.
 #alias cull='lt| wc; find . -size -1k -name \*.jpg -type f | parallel -n 6 rm {} ; lt | tail -10 ; lt | wc'
 
-alias cx='chmod 744'
+alias cx='/bin/chmod 744'
 #alias date=/bin/date
 #alias dir='/bin/ls -Fla --color'
+#alias dir='/bin/ls -Fla '
 alias dir='/bin/ls -Fla '
+alias dir='/usr/local/bin/exa -l'
 alias fdf='/bin/df -PH '
 alias dku='diskutil '
 alias dl='/bin/ls -alF | less '
+alias el='/usr/local/bin/exa -l '
 # replaced ds alias with a script in ~/bin
 #alias ds='/usr/bin/du -sk * | sort -n; /usr/bin/du -skh'
 alias egrep='egrep --color=auto '
@@ -69,7 +76,7 @@ alias grc="egrep '^#' "
 alias grep='grep --color=auto '
 alias gz=gzip
 alias gzd='gzip -d'
-alias hc='for i in $(/usr/bin/seq -w 0 40); do echo $i ; find . -name \*-\*-${i}.jpg | wc; done'
+#alias hc='for i in $(/usr/bin/seq -w 0 40); do echo $i ; find . -name \*-\*-${i}.jpg | wc; done'
 
 # get web server headers #
 alias header='curl -I'
@@ -150,6 +157,7 @@ alias lc="/bin/ls -CF --color"
 alias la='/bin/ls -aF'
 alias les='less '
 alias ll='/bin/ls'
+alias lrs='/bin/ls -lhSr' #ls reverse long human size
 alias lswc='/bin/ls | /usr/bin/wc'
 alias lt='/bin/ls -alrt'
 alias ltt='ls -latr | tail -10'
@@ -164,12 +172,13 @@ alias more=i"/binless "
 alias mount='mount | column -t '
 #
 alias pman="/usr/bin/groff -man -Tascii "
+alias sleep='pmset sleepnow'
 #alias psh="powershell "
 alias pu="pushd"
 alias r="fc -e -"
 alias reload="source ~/.bash_profile"
 alias run='ps | fgrep R'
-alias sp='feh -rz. '
+alias sp='feh -rzZ. '
 alias stop='kill -STOP'
 alias suspend='kill -STOP '
 alias t20='tail -20'
