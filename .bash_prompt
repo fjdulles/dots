@@ -8,7 +8,9 @@
 export PS1="(\h/\u \w) "
 
 HOST=$(uname -n)  #Helps figure which host we are on
-[ -f ~/.bash_host ] &&  source ~/.bash_host
+#if [ -f ~/.bash_host ] ; then
+    [[ -n  $HOME/.bash_host ]] && source $HOME/.bash_host
+#fi
 # ## Prompt
 #
 # Source URL:
@@ -107,8 +109,8 @@ HOST=$(uname -n)  #Helps figure which host we are on
    fi
 # 
 #export PS1="${txtred}|${txtgrn}$HOST ${txtcyn}\u ${txtred}\w ${txtwht}\D{%a%e-%b}${txtblu}\D{%T}${txtred}|\n| ${txtrst}"
-#   PS1="${P_EXIT}${P_USER}${P_WHITE}@${P_HOST} ${P_YELLOW}${P_PWD}${P_GREEN}${P_GIT}${P_YELLOW} ❯ ${P_RESET}"
-   PS1="${P_EXIT}${P_GREEN}\u${P_BLUE}@${HOST} ${P_RED}${P_PWD}${P_GREEN}${P_GIT} ${P_WHITE}\D{%a%e-%b}${P_BLUE}\D{%T}${P_RED}| \n| ${P_RESET}"
+#  PS1="${P_EXIT}${P_USER}${P_WHITE}@${P_HOST} ${P_YELLOW}${P_PWD}${P_GREEN}${P_GIT}${P_YELLOW} ❯ ${P_RESET}"
+   PS1="${P_EXIT}${P_GREEN}\u${P_BLUE}@${HOST} ${P_RED}${P_PWD}${P_GREEN}${P_GIT} ${P_WHITE}\D{%a%e-%b} ${P_BLUE}\D{%T}${P_RED}| \n| ${P_RESET} "
 #   PS1="${P_EXIT}${P_GREEN}\u${P_BLUE}@${HOST} | ${P_RESET}"
  }
 # 

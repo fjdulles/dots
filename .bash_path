@@ -1,27 +1,35 @@
-#! /bin/bash
+#!/usr/bin/env bash
+#
 # .bash_path
 
 export PATH=\
-~/bin:\
+/opt/homebrew/opt/uutils-coreutils/libexec/uubin:\
+/opt/homebrew/bin:\
+/opt/homebrew/sbin:\
 /usr/local/bin:\
 /bin:\
-#/usr/bin/X11:\
 /usr/bin:\
 /usr/sbin:\
 /sbin:\
+/usr/libexec:\
 /usr/local/sbin:\
-/usr/X11/bin:\
-/usr/local/bin/X11 #:\
+~/bin:\
+/usr/X11/bin:
+
+#
+# Apparently, this is the modern way to set MAPATH after PATH is defined
+#
+
+MANPATH=$(/usr/bin/env manpath)
+
+
+#/usr/bin/X11:\
 #/Developer/usr/bin:\
 #/Developer/usr/sbin
 
-export MANPATH=/usr/local/man:\
-/usr/man/preformat:\
-/usr/man:\
-/opt/local/share/man:\
-/usr/share/man:\
-/usr/share/catman/:\
-/usr/X11R6/man:
+#export MANPATH=\
+#/opt/homebrew/share/man:\
+#/usr/share/man:\
 
 #export INFOPATH=\
 #/opt/local/share/info

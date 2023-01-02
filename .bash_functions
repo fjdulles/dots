@@ -42,7 +42,7 @@ function mk() {
 
 # Open man page as PDF mac specific
 function manpdf() {
- man -t "${1}" | open -f -a /Applications/Preview.app/
+ man -t "${1}" | open -f -a /System/Applications/Preview.app/
 }
 
 cd ()
@@ -65,7 +65,15 @@ cd ()
   esac
 }
 
+mkcd ()
+{
+  mkdir -p -- "$1" && cd -P -- "$1"
+}
 
+mdc ()
+{
+  mkdir -- "$1" && cd -P -- "$1"
+}
 # "repeat" command.  Like:
 #
 #	repeat 10 echo foo

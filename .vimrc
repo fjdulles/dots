@@ -7,7 +7,7 @@ set wildmenu
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" From YouTube  'How to Do 90% of What Plugind Do (With Just Vim)'
+" From YouTube  'How to Do 90% of What Plugins Do (With Just Vim)'
 let g:netrw_banner=0       " diable annoying banner
 let g:netrw_browse_split=4 " open in prior window
 let g:netrw_altv=1         " open splits tot he right

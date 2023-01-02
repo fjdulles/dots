@@ -3,9 +3,8 @@
 # .bash_aliases
 #  echo "This is .bash_aliases"
 #
+alias check='echo yep'
 
-# apt commands only useful on debian related linux
-#
 if [ $UID -ne 0 ]; then
     alias reboot='sudo reboot'
     alias shutdown='sudo /sbin/shutdown '
@@ -28,33 +27,35 @@ alias 2='python2'
 alias 3='python3'
 alias python='python3' 
 
-alias aptinstall='sudo apt-get install '
 alias autoload='typeset -fu'
+
+alias bup='echo **UPDATE** ; brew update; echo **UPGRADE** ; brew upgrade ; echo **CLEANUP** ; brew cleanup'
 
 alias cdb='cd ~/bin'
 alias cdp='cd ~-'
 alias cdub='cd /usr/local/bin'
+alias cdoh='cd /opt/homebrew/bin'
 
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
+#alias chown='chown --preserve-root'
+#alias chmod='chmod --preserve-root'
+#alias chgrp='chgrp --preserve-root'
 
-alias cl=clear
+alias c=clear
 #alias ct='/bin/rm *.aux *.dvi *.log'
-
-#the following is better as a script that takes a size parameter.
-#alias cull='lt| wc; find . -size -1k -name \*.jpg -type f | parallel -n 6 rm {} ; lt | tail -10 ; lt | wc'
 
 alias cx='/bin/chmod 744'
 #alias date=/bin/date
 #alias dir='/bin/ls -Fla --color'
 #alias dir='/bin/ls -Fla '
-alias dir='/bin/ls -Fla '
-alias dir='/usr/local/bin/exa -l'
+#alias dir='/bin/ls -Fla '
+#alias dir='/usr/local/bin/exa -l'
+alias dir='/opt/homebrew/bin/exa -l'
+alias dht='dir | head; echo "..." ; dir | tail'
 alias fdf='/bin/df -PH '
 alias dku='diskutil '
 alias dl='/bin/ls -alF | less '
-alias el='/usr/local/bin/exa -l '
+#alias el='/usr/local/bin/exa -l '
+alias el='/opt/homebrew/bin/exa -l '
 # replaced ds alias with a script in ~/bin
 #alias ds='/usr/bin/du -sk * | sort -n; /usr/bin/du -skh'
 alias egrep='egrep --color=auto '
@@ -64,7 +65,7 @@ alias eg=egrep
 # Also, clear Apple’s System Logs to improve shell startup speed.
 # Finally, clear download history from quarantine. https://mths.be/bum
 
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+#alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
 #alias etx='export TERM=xterm'
 alias false="let 0"
@@ -84,6 +85,7 @@ alias header='curl -I'
 # Request using GET, POST, etc. method
 
 
+
 for METHOD in GET HEAD POST PUT DELETE TRACE OPTIONS; do
   alias "$METHOD"="lwp-request -m '$METHOD'"
 done
@@ -92,7 +94,10 @@ unset METHOD
 alias hosts="sudo $EDITOR /etc/hosts"
 #alias his="historie"
 alias quit="exit"
-alias week="date +%V"
+alias dateweek="date +%V"
+alias now='date +"%T"'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%Y"'
 alias speedtest="wget -O /dev/null http://speed.transip.nl/100mb.bin"
 
 alias stfu="osascript -e 'set volume output muted true'"
@@ -126,7 +131,8 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
-alias path='echo -e ${PATH//:/\\n}'
+#alias path='echo -e ${PATH//:/\\n}'
+alias path='echo -e ${PATH//:/\\n};echo " "; echo -e ${MANPATH//:/\\n}'
 
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
@@ -150,7 +156,7 @@ else # macOS `ls`
 	export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 fi
 
-alias c="/bin/cat "
+alias p="/bin/cat "
 alias l.="/bin/ls -ald .[0-9A-z]* "
 alias l="/bin/ls -CF --color"
 alias lc="/bin/ls -CF --color"
@@ -159,11 +165,13 @@ alias les='less '
 alias ll='/bin/ls'
 alias lrs='/bin/ls -lhSr' #ls reverse long human size
 alias lswc='/bin/ls | /usr/bin/wc'
-alias lt='/bin/ls -alrt'
+#alias lt='/bin/ls -alrt'
+#alias lt='/usr/local/bin/exa  -al --sort=modified '
+alias lt='/opt/homebrew/bin/exa  -al --sort=modified '
 alias ltt='ls -latr | tail -10'
 #alias ltx='latex '
 alias macsleep='osascript -e '\''tell application "Finder" to sleep'\'''
-alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
+#alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
 alias mkdir="mkdir -pv "
 alias md=mkdir
 #alias mailchk='ls -l /var/spool/mail/{dulles,fjd}'
@@ -174,6 +182,7 @@ alias mount='mount | column -t '
 alias pman="/usr/bin/groff -man -Tascii "
 alias sleep='pmset sleepnow'
 #alias psh="powershell "
+alias staff='mosh -A dulles@staff.msi.umn.edu'
 alias pu="pushd"
 alias r="fc -e -"
 alias reload="source ~/.bash_profile"

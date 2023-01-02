@@ -57,13 +57,15 @@ shopt -s histappend
 shopt -s cdspell
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
+#more powerful globbing
+shopt -s extglob
 
 #
 # Commands for hh (from hh --show-configuration)
 #
 export HH_CONFIG=hicolor         # get more colors
 export HH_CONFIG=blacklist
-#shopt -s histappend              # append new history items to .bash_history
+shopt -s histappend              # append new history items to .bash_history
 #export HISTCONTROL=ignorespace   # leading space hides commands from history
 #export HISTFILESIZE=10000        # increase history file size (default is 500)
 export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
@@ -257,3 +259,10 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 #     echo $output
 # }
 #cd
+
+
+# BEGIN_KITTY_SHELL_INTEGRATION
+if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+# END_KITTY_SHELL_INTEGRATION
+
+source /Users/fjd/.config/broot/launcher/bash/br
