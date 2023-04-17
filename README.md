@@ -1,2 +1,0 @@
-# dots
-bash dot files

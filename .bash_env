@@ -65,7 +65,7 @@ export HISTCONTROL=ignoreboth:erasedups
 #export HISTSIZE=5000
 #qexport MAILCHECK=60
 #export MAILPATH=/var/spool/mail/dulles
-export LESS=Ncez-2y20
+export LESS=cez-2y20
 export TMOUT=0
 
 export command_oriented_history=1

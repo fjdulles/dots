@@ -81,8 +81,8 @@ HOST=$(uname -n)  #Helps figure which host we are on
  
    local EXIT_CODE=$?
    local P_EXIT=""
-   local MAXLENGTH=35
-   local TRUNC_SYMBOL=".."
+   local MAXLENGTH=45
+   local TRUNC_SYMBOL="..."
    local DIR=${PWD##*/}
    local P_PWD=${PWD/#$HOME/\~}
 # 

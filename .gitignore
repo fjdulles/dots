@@ -2,3 +2,5 @@
 .bash_profile.pysave
 *.swp
 tags
+.DS_Store
+work
