@@ -44,7 +44,7 @@ elif [ -f /etc/bash_completion ]; then
 fi;
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completio
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Enable tab completion for `g` by marking it as an alias for `git`
 #
@@ -158,3 +158,7 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 
 source /Users/fjd/.config/broot/launcher/bash/br
 #eval "$(/opt/homebrew/bin/brew shellenv)"
+export MODULAR_HOME="/Users/fjd/.modular"
+export PATH="/Users/fjd/.modular/pkg/packages.modular.com_max/bin:$PATH"
+export MODULAR_HOME="/Users/fjd/.modular"
+export PATH="/Users/fjd/.modular/pkg/packages.modular.com_max/bin:$PATH"

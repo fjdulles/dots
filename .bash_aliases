@@ -29,7 +29,7 @@ alias python='python3'
 
 alias autoload='typeset -fu'
 
-alias bup='echo **UPDATE** ; brew update; echo **UPGRADE** ; brew upgrade ; echo **CLEANUP** ; brew cleanup'
+alias bup='echo XXX UPDATE XXX ; brew update; echo XXX UPGRADE ``XXX  ; brew upgrade ; echo XXX CLEANUP XXX ; brew cleanup'
 
 alias cdb='cd ~/bin'
 alias cdp='cd ~-'
@@ -48,14 +48,15 @@ alias cx='/bin/chmod 744'
 #alias dir='/bin/ls -Fla --color'
 #alias dir='/bin/ls -Fla '
 #alias dir='/bin/ls -Fla '
-#alias dir='/usr/local/bin/exa -l'
-alias dir='/opt/homebrew/bin/exa -l'
+#alias dir='/usr/local/bin/eza -l'
+alias dir='/opt/homebrew/bin/eza -l'
 alias dht='dir | head; echo "..." ; dir | tail'
 alias fdf='/bin/df -PH '
 alias dku='diskutil '
-alias dl='/bin/ls -alF | less '
-#alias el='/usr/local/bin/exa -l '
-alias el='/opt/homebrew/bin/exa -l '
+#alias dl='/bin/ls -alF | less '
+alias dl='/opt/homebrew/bin/eza -al | less'
+#alias el='/usr/local/bin/eza -l '
+alias el='/opt/homebrew/bin/eza -l '
 # replaced ds alias with a script in ~/bin
 #alias ds='/usr/bin/du -sk * | sort -n; /usr/bin/du -skh'
 alias egrep='egrep --color=auto '
@@ -78,6 +79,7 @@ alias grep='grep --color=auto '
 alias gz=gzip
 alias gzd='gzip -d'
 #alias hc='for i in $(/usr/bin/seq -w 0 40); do echo $i ; find . -name \*-\*-${i}.jpg | wc; done'
+alias imop="/Applications/ImageOptim.app/Contents/MacOS/ImageOptim " 
 
 # get web server headers #
 alias header='curl -I'
@@ -158,7 +160,8 @@ fi
 
 alias p="/bin/cat "
 alias l.="/bin/ls -ald .[0-9A-z]* "
-alias l="/bin/ls -CF --color"
+#$alias l="/bin/ls -CF --color"
+alias l="less "
 alias lc="/bin/ls -CF --color"
 alias la='/bin/ls -aF'
 alias les='less '
@@ -166,8 +169,8 @@ alias ll='/bin/ls'
 alias lrs='/bin/ls -lhSr' #ls reverse long human size
 alias lswc='/bin/ls | /usr/bin/wc'
 #alias lt='/bin/ls -alrt'
-#alias lt='/usr/local/bin/exa  -al --sort=modified '
-alias lt='/opt/homebrew/bin/exa  -al --sort=modified '
+#alias lt='/usr/local/bin/eza  -al --sort=modified '
+alias lt='/opt/homebrew/bin/eza  -al --sort=modified '
 alias ltt='ls -latr | tail -10'
 #alias ltx='latex '
 alias macsleep='osascript -e '\''tell application "Finder" to sleep'\'''
@@ -180,7 +183,7 @@ alias more=i"/binless "
 alias mount='mount | column -t '
 #
 alias pman="/usr/bin/groff -man -Tascii "
-alias sleep='pmset sleepnow'
+alias msleep='pmset sleepnow'
 #alias psh="powershell "
 alias staff='mosh -A dulles@staff.msi.umn.edu'
 alias pu="pushd"

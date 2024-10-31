@@ -65,6 +65,10 @@ cd ()
   esac
 }
 
+function lk {
+  cd "$(walk "$@")"
+}
+
 mkcd ()
 {
   mkdir -p -- "$1" && cd -P -- "$1"

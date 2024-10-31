@@ -6,7 +6,6 @@ export PATH=\
 /opt/homebrew/opt/uutils-coreutils/libexec/uubin:\
 /opt/homebrew/bin:\
 /opt/homebrew/sbin:\
-/usr/local/bin:\
 /bin:\
 /usr/bin:\
 /usr/sbin:\
